@@ -7,17 +7,17 @@ module.exports = {
     //   cmd: 'ps gx'
     // },
 
-    // list_directory: {
-    //   title: 'Directory listing',
-    //   description: 'List all files in directory in which command was executed. Has optional command-line string argument.',
-    //   cmd: 'ls {0}',
-    //   params: [
-    //     {
-    //       default: '-la',
-    //       title: 'Command line arguments'
-    //     }
-    //   ]
-    // },
+    list_directory: {
+      title: 'Directory listing',
+      description: 'List all files in directory in which command was executed. Has optional command-line string argument.',
+      cmd: 'ls {0}',
+      params: [
+        {
+          default: '-la',
+          title: 'Command line arguments'
+        }
+      ]
+    },
 
     // long_response: {
     //   title: 'Long system response time',

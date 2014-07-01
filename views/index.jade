@@ -18,7 +18,7 @@ block content
               if value.params
                 for paramDetails, param in value.params
                   p.g-medium--full.g-wide--full
-                    label.g-wide--1.g-medium--half(for="#{key}_#{param}") #{paramDetails.title}:
+                    label.g-wide--1.g-medium--half(for="#{key}_#{param}") #{paramDetails.title}:&nbsp;&nbsp;
                     input.g-wide--3.g-wide--last.g-medium--half.g--last(type="text", name="#{key}-#{param}", id="#{key}_#{param}", value="#{paramDetails.default}")
             div.available-command-execution-details.g-medium--full.g-wide--full.hidden
               div.spinner
