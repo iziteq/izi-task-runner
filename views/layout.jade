@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="description", content="A front-end template that helps you build fast, modern mobile web apps.")
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimal-ui")
+
+    link(rel="stylesheet", href="/stylesheets/h5bp.css")
+    link(rel="stylesheet", href="/stylesheets/components/components.css")
+    link(rel="stylesheet", href="/stylesheets/main.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+
+  body
+    include includes/header
+    include includes/navigation
+
+    main
+      block content
+
+    script(src="/javascripts/zepto.min.js")
+    script(src="/javascripts/socket.io.js")
+    script(src="/javascripts/main.js")
+    script(src="/javascripts/runner.js")
