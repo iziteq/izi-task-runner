@@ -14,7 +14,7 @@ cd ./izi-task-runner && sudo npm install
 
 sudo npm i -g forever
 
-forever start -w ./bin/www
+forever start ./bin/www
 ```
 
 Example of nginx configuration can be found in `./sample.nginx.conf`
@@ -22,7 +22,7 @@ Example of nginx configuration can be found in `./sample.nginx.conf`
 
 ## Configure tasks
 
-Tasks can be set and configurured using `./config/config.js`
+Tasks can be set and configured using `./config/config.js`
 
 Example of command description:
 

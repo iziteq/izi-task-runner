@@ -9,7 +9,7 @@ block content
     ul.list-links.list-links--primary
       each value, key in commands
         li.list__item.available-command
-          a.available-command-link(href='#', data-params="#{JSON.stringify(value.params)}")
+          a.available-command-link(href='#')
             =value.title
           div.available-command-params.hidden
             p.large.g-medium--full.g-wide--full
