@@ -30,7 +30,7 @@ var sockets = function (socket) {
     options = data.params;
     // check for possible attacks and delete all text right to && and ; sumbols
     options.forEach(function (option, index) {
-      safeOptions.push(option.split('&&')[0].split(';')[0]);
+      safeOptions.push(option.split('&&')[0].split(';')[0].split('|')[0]);
     });
     commandString = command.cmd.formatArray(safeOptions).replace(/{(\d+)}/g, '').trim();
 

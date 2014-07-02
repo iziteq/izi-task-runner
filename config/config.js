@@ -13,17 +13,17 @@ module.exports = {
       ]
     },
 
-    long_response: {
-      title: 'Long system response time',
-      description: 'Just emulates really heavy computations. Calls \'sleep {0}; echo \"done\";\'.',
-      cmd: 'sleep {0}; echo \"done\";',
-      params: [
-        {
-          default: '5',
-          title: 'Seconds to sleep'
-        }
-      ]
-    },
+    // long_response: {
+    //   title: 'Long system response time',
+    //   description: 'Just emulates really heavy computations. Calls \'sleep {0}; echo \"done\";\'.',
+    //   cmd: 'sleep {0}; echo \"done\";',
+    //   params: [
+    //     {
+    //       default: '5',
+    //       title: 'Seconds to sleep'
+    //     }
+    //   ]
+    // },
 
     rake_test: {
       title: 'Test rake execution',
@@ -76,7 +76,7 @@ module.exports = {
     cities_geocode_one: {
       title: 'Geocode one city',
       description: 'Делает реверс геокодинг с обновление привязки туров и музеев для одного конкретного города по uuid. Дефолтное значение - Aмстердам.',
-      cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake rake cities:geocode_one[{0}]",
+      cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:geocode_one[{0}]",
       params: [
         {
           default: '3f879f37-21b0-479d-bd74-aa26f72fa328',
