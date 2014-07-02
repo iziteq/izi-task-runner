@@ -19,17 +19,17 @@ module.exports = {
       ]
     },
 
-    // long_response: {
-    //   title: 'Long system response time',
-    //   description: 'Just emulates really heavy computations. Calls \'sleep {0}; echo \"done\";\'.',
-    //   cmd: 'sleep {0}; echo \"done\";',
-    //   params: [
-    //     {
-    //       default: '5',
-    //       title: 'Seconds to sleep'
-    //     }
-    //   ]
-    // },
+    long_response: {
+      title: 'Long system response time',
+      description: 'Just emulates really heavy computations. Calls \'sleep {0}; echo \"done\";\'.',
+      cmd: 'sleep {0}; echo \"done\";',
+      params: [
+        {
+          default: '5',
+          title: 'Seconds to sleep'
+        }
+      ]
+    },
 
     cities_translate: {
       title: 'Translate cities',

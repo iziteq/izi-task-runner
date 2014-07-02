@@ -14,11 +14,11 @@ if (!String.prototype.formatArray) {
 }
 
 var sockets = function (socket) {
-  // console.log('a user connected');
+  console.log('a user connected');
 
-  // socket.on('disconnect', function(){
-  //   console.log('user disconnected');
-  // });
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
 
   socket.on('executeCommand', function(data){
     var command, options, commandString, spawnCommand,
