@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// var debug = require('debug')('tasks_runner');
 var app = require('../app');
 var sockets = require('../routes/sockets');
 

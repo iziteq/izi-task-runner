@@ -1,12 +1,6 @@
 module.exports = {
 
   commands: {
-    // list_processes: {
-    //   title: 'Process listing',
-    //   description: 'List all system processes running from current user. Takes no params.',
-    //   cmd: 'ps gx'
-    // },
-
     list_directory: {
       title: 'Directory listing',
       description: 'List all files in directory in which command was executed. Has optional command-line string argument.',
@@ -29,6 +23,12 @@ module.exports = {
           title: 'Seconds to sleep'
         }
       ]
+    },
+
+    rake_test: {
+      title: 'Test rake execution',
+      description: 'Тестова задача для проверки выполнения задач для rake',
+      cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:translate"
     },
 
     cities_translate: {
