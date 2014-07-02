@@ -11,4 +11,8 @@ var server = app.listen(app.get('port'), function() {
 
 var io = require('socket.io')(server);
 
+io.enable('browser client etag');
+io.set('log level', 1);
+io.set('transports', [ 'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling' ]);
+
 io.on('connection', sockets);
