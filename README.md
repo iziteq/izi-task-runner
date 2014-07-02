@@ -17,6 +17,9 @@ sudo npm i -g forever
 forever start -w ./bin/www
 ```
 
+Example of nginx configuration can be found in `./sample.nginx.conf`
+
+
 ## Configure tasks
 
 Tasks can be set and configurured using `./config/config.js`

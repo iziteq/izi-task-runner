@@ -13,18 +13,6 @@ module.exports = {
       ]
     },
 
-    // long_response: {
-    //   title: 'Long system response time',
-    //   description: 'Just emulates really heavy computations. Calls \'sleep {0}; echo \"done\";\'.',
-    //   cmd: 'sleep {0}; echo \"done\";',
-    //   params: [
-    //     {
-    //       default: '5',
-    //       title: 'Seconds to sleep'
-    //     }
-    //   ]
-    // },
-
     rake_test: {
       title: 'Test rake execution',
       description: 'Тестовая задача для проверки выполнения задач для rake',
