@@ -27,8 +27,8 @@ module.exports = {
 
     rake_test: {
       title: 'Test rake execution',
-      description: 'Тестова задача для проверки выполнения задач для rake',
-      cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:translate"
+      description: 'Тестовая задача для проверки выполнения задач для rake',
+      cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake db:migrate:status"
     },
 
     cities_translate: {

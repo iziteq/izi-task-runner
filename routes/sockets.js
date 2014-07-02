@@ -37,6 +37,8 @@ var sockets = function (socket) {
     doneEvent = 'commandDone:'+data.task;
     failEvent = 'commandFail:'+data.task;
 
+    console.log('received user command:' + commandString);
+
     exec(commandString, function (error, stdout, stderr) {
       if (error) {
         socket.emit(failEvent, {output: stdout, errors: stderr});
