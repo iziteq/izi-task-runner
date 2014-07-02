@@ -74,13 +74,13 @@ module.exports = {
     },
 
     cities_geocode_one: {
-      title: 'Geocode one city',
-      description: 'Делает реверс геокодинг с обновление привязки туров и музеев для одного конкретного города по uuid. Дефолтное значение - Aмстердам.',
+      title: 'Geocode one StorySet',
+      description: 'Делает реверс геокодинг с обновление привязки для одного конкретного музея или тура по uuid.',
       cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:geocode_one[{0}]",
       params: [
         {
-          default: '3f879f37-21b0-479d-bd74-aa26f72fa328',
-          title: 'City uuid'
+          default: '',
+          title: 'StorySet uuid'
         }
       ]
     }
