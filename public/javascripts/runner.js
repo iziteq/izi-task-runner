@@ -4,7 +4,7 @@
   window.addEventListener('load', function () {
 
     var i, j,
-      socket = io(),
+      socket = io().connect('http://tasks.dev.izi.travel/'),
       commandLinks = document.querySelectorAll('.available-command-link'),
       commandExecuteButtons = document.querySelectorAll('.available-command-trigger');
 

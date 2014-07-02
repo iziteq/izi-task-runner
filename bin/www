@@ -11,6 +11,6 @@ var server = app.listen(app.get('port'), function() {
 
 var io = require('socket.io').listen(server);
 
-io.set('transports', [ 'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling', 'polling' ]);
+io.set('transports', [ 'xhr-polling', 'polling' ]);
 
 io.on('connection', sockets);
