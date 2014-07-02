@@ -9,10 +9,8 @@ var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });
 
-var io = require('socket.io')(server);
+var io = require('socket.io').listen(server);
 
-io.enable('browser client etag');
-io.set('log level', 1);
-io.set('transports', [ 'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling' ]);
+io.set('transports', [ 'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling', 'polling' ]);
 
 io.on('connection', sockets);
