@@ -27,17 +27,17 @@ module.exports = {
     geocoding_commands: {
       title: 'Гео-кодинг',
       commands: {
-        cities_update_museums: {
-          title: 'Update museums for cities',
-          description: 'Обновляет привязку музеев к городам - забирает из google данные о городе для тех музеев, у которых нет этих данных. Запускается в 6:00 UTC ежедневно.',
-          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:update:museums"
-        },
+        // cities_update_museums: {
+        //   title: 'Update museums for cities',
+        //   description: 'Обновляет привязку музеев к городам - забирает из google данные о городе для тех музеев, у которых нет этих данных. Запускается в 6:00 UTC ежедневно.',
+        //   cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:update:museums"
+        // },
 
-        cities_update_tours: {
-          title: 'Update tours for cities',
-          description: 'Обновляет привязку туров к городам - забирает из google данные о городе для тех туров, у которых нет этих данных. Запускается в 6:00 UTC ежедневно.',
-          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:update:tours"
-        },
+        // cities_update_tours: {
+        //   title: 'Update tours for cities',
+        //   description: 'Обновляет привязку туров к городам - забирает из google данные о городе для тех туров, у которых нет этих данных. Запускается в 6:00 UTC ежедневно.',
+        //   cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:update:tours"
+        // },
         cities_geocode_one: {
           title: 'Geocode one StorySet',
           description: 'Делает реверс геокодинг с обновление привязки для одного конкретного музея или тура по uuid.',
@@ -52,7 +52,7 @@ module.exports = {
       }
     },
 
-    geocoding_commands: {
+    cities_and_countries_commands: {
       title: 'Города и страны',
       commands: {
         cities_story_set_calculate: {
