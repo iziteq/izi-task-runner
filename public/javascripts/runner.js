@@ -18,27 +18,28 @@
       }
 
       function createNitification() {
-        if (Notification.permission === 'granted') {
-          var notification = new Notification(title, {body: text, icon: icon});
-          notification.onshow = function () {
-            setTimeout(notification.close, 5000);
-          };
-        }
+        var notification = new Notification(title, {body: text, icon: icon});
+        notification.onshow = function () {
+          setTimeout(notification.close, 5000);
+        };
       }
 
-      if (!('Notification' in window)) {
-        console.log('This browser does not support desktop notification');
-        return false;
+      if (!("Notification" in window)) {
+        alert("This browser does not support desktop notification");
       }
 
-      createNitification();
+      else if (Notification.permission === "granted") {
+        createNitification();
+      }
 
-      if (Notification.permission !== 'denied') {
+      else if (Notification.permission !== 'denied') {
         Notification.requestPermission(function (permission) {
           if(!('permission' in Notification)) {
             Notification.permission = permission;
           }
-          createNitification();
+          if (permission === "granted") {
+            createNitification()
+          }
         });
       }
     }
@@ -102,7 +103,7 @@
           var html = data.output.replace(/\n/gi, '<br>');
           resultsText.innerHTML = html;
           clearViewOnResponse(that, spinner, resultsText);
-          notifyTaskStatus(that.dataset.title + ' - ok!', html.substring(0, 50) + '...', 'succees');
+          notifyTaskStatus(that.dataset.title + ' - ok!', data.output.substring(0, 40) + '...', 'succees');
           socket.off(doneEvent);
         });
 
@@ -111,7 +112,7 @@
           resultsText.innerHTML = html;
           results.classList.add('error');
           clearViewOnResponse(that, spinner, resultsText);
-          notifyTaskStatus(that.dataset.title + ' - error!', html.substring(0, 50) + '...', 'error');
+          notifyTaskStatus(that.dataset.title + ' - error!', data.output.substring(0, 40) + '...', 'error');
           socket.off(failEvent);
         });
 
