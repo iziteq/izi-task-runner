@@ -18,9 +18,11 @@
       }
 
       function createNitification() {
-        var notification = new Notification(title, {body: text, icon: icon});
-        notification.onshow = function () {
-          setTimeout(notification.close, 5000);
+        var message = new Notification(title, {body: text, icon: icon});
+        message.onshow = function () {
+          setTimeout(function() {
+            message.close();
+          }, 10000);
         };
       }
 
