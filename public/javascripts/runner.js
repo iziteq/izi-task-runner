@@ -46,6 +46,7 @@
     function formRequest(element) {
       var params = [],
         command = element.dataset.command,
+        commandList = element.dataset.list,
         paramInputs = document.querySelectorAll('input[name^='+command+']');
       for (i = 0; i < paramInputs.length; i++) {
         params.push(paramInputs[i].value);
@@ -54,6 +55,7 @@
         params = [''];
       }
       return {
+        taskGroup: commandList,
         task: command,
         params: params
       };

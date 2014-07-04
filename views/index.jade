@@ -7,24 +7,30 @@ block content
   section
     h3 Commands:
     ul.list-links.list-links--primary
-      each value, key in commands
+      each commandsList, commandListKey in commands
         li.list__item.available-command
           a.available-command-link(href='#')
-            =value.title
+            =commandsList.title
           div.available-command-params.hidden
-            p.large.g-medium--full.g-wide--full
-              =value.description
-            div.g-medium--full.g-wide--full
-              if value.params
-                for paramDetails, param in value.params
-                  p.g-medium--full.g-wide--full
-                    label.g-wide--1.g-medium--half(for="#{key}_#{param}") #{paramDetails.title}:&nbsp;&nbsp;
-                    input.g-wide--3.g-wide--last.g-medium--half.g--last(type="text", name="#{key}-#{param}", id="#{key}_#{param}", value="#{paramDetails.default}")
-            div.available-command-execution-details.g-medium--full.g-wide--full.hidden
-              div.spinner
-                div.bounce1
-                div.bounce2
-                div.bounce3
-              div.result
-                | test of details
-            button.button--primary.available-command-trigger(data-command="#{key}", data-title="#{value.title}") Run this task
+            ul.list-links.list-links--primary.inner-list
+              each value, key in commandsList.commands
+                li.list__item.available-command
+                  a.available-command-link(href='#')
+                    =value.title
+                  div.available-command-params.hidden
+                    p.large.g-medium--full.g-wide--full
+                      =value.description
+                    div.g-medium--full.g-wide--full
+                      if value.params
+                        for paramDetails, param in value.params
+                          p.g-medium--full.g-wide--full
+                            label.g-wide--1.g-medium--half(for="#{key}_#{param}") #{paramDetails.title}:&nbsp;&nbsp;
+                            input.g-wide--3.g-wide--last.g-medium--half.g--last(type="text", name="#{key}-#{param}", id="#{key}_#{param}", value="#{paramDetails.default}")
+                    div.available-command-execution-details.g-medium--full.g-wide--full.hidden
+                      div.spinner
+                        div.bounce1
+                        div.bounce2
+                        div.bounce3
+                      div.result
+                        | test of details
+                    button.button--primary.available-command-trigger(data-command="#{key}", data-list="#{commandListKey}", data-title="#{value.title}") Run this task

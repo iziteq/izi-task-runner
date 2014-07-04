@@ -21,12 +21,13 @@ var sockets = function (socket) {
   });
 
   socket.on('executeCommand', function(data){
-    var command, options, commandString, spawnCommand,
+    var command, options, commandString, spawnCommand, commands,
       safeOptions = [],
-      commands = config.get('commands'),
+      commandList = config.get('commands'),
       doneEvent, failEvent;
 
-    command = commands[data.task];
+    commandGroup = commandList[data.taskGroup];
+    command = commandGroup.commands[data.task];
     options = data.params;
     // check for possible attacks and delete all text right to && and ; sumbols
     options.forEach(function (option, index) {
@@ -40,6 +41,7 @@ var sockets = function (socket) {
     console.log('received user command:' + commandString);
 
     exec(commandString, function (error, stdout, stderr) {
+      console.log('command was executed');
       if (error) {
         socket.emit(failEvent, {output: stdout, errors: stderr});
       } else {

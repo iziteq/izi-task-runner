@@ -14,7 +14,7 @@ cd ./izi-task-runner && sudo npm install
 
 sudo npm i -g forever
 
-forever start ./bin/www
+forever start ./bin/www #alternativly - /usr/bin/forever
 ```
 
 Example of nginx configuration can be found in `./sample.nginx.conf`
