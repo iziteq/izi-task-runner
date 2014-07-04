@@ -40,12 +40,12 @@ module.exports = {
         // },
         cities_geocode_one: {
           title: 'Geocode one StorySet',
-          description: 'Делает реверс геокодинг с обновление привязки для одного конкретного музея или тура по uuid.',
+          description: 'Делает реверс геокодинг с обновление привязки для одного конкретного музея или тура по id.',
           cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cities:geocode_one[{0}]",
           params: [
             {
               default: '',
-              title: 'StorySet uuid'
+              title: 'StorySet id'
             }
           ]
         }
@@ -85,6 +85,11 @@ module.exports = {
           title: 'Reindex statistics',
           description: 'Забирает статисику с гугла и кладет в идекс elasticsearch. Max execution time about 5 min. Запускается в 6:00 UTC ежедневно.',
           cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake statistics:reindex"
+        },
+        clear_travel_cache: {
+          title: 'Очистить кэш на IZI.travel',
+          description: 'Чистит все закешированные записи и Travel начинает общаться с API',
+          cmd: "cd /home/deployer/apps/izi-travel/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cache:clear"
         }
       }
     }
