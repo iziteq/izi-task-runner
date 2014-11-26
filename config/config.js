@@ -90,6 +90,11 @@ module.exports = {
           title: 'Очистить кэш на IZI.travel',
           description: 'Чистит все закешированные записи и Travel начинает общаться с API',
           cmd: "cd /home/deployer/apps/izi-travel/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cache:clear"
+        },
+        update_travel_location_data: {
+          title: 'Обновить список городов и стран на izi.TRAVEL (данные для автокомплита и ЧПУ)',
+          description: 'Получает данные по городам и странам из API. При успешном выполнении удаляет существующие данные и заменяет их новыми. Запускается раз в полчаса.',
+          cmd: "cd /home/deployer/apps/izi-travel/current && IZI_CONFIG=/home/deployer/apps/izi-travel/shared/config/izi_config.yml script/rails runner -e production 'MtgFetcher.populate'"
         }
       }
     }
