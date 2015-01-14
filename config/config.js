@@ -95,6 +95,11 @@ module.exports = {
           title: 'Обновить список городов и стран на izi.TRAVEL (данные для автокомплита и ЧПУ)',
           description: 'Получает данные по городам и странам из API. При успешном выполнении удаляет существующие данные и заменяет их новыми. Запускается раз в полчаса.',
           cmd: "cd /home/deployer/apps/izi-travel/current && IZI_CONFIG=/home/deployer/apps/izi-travel/shared/config/izi_config.yml script/rails runner -e production 'MtgFetcher.populate'"
+        },
+        update_reviews_average: {
+          title: 'Обновить сводку отзывов и оценок для API.',
+          description: 'Собрает количество отзывов и среднюю оценку для каждого MTGObject\'а. Запускается в 6:00 UTC ежедневно.',
+          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake reviews:rating:all && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake reviews:rating"
         }
       }
     }
