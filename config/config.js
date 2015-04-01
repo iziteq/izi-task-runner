@@ -78,6 +78,33 @@ module.exports = {
       }
     },
 
+    izi_cms: {
+      title: 'izi.TRAVEL CMS',
+      commands: {
+        show_news_to_all: {
+          title: 'Показать What\'s new для всех пользователей.',
+          description: 'Показать блок "What\'s new in izi.TRAVEL CMS" в CMS для всех пользователей',
+          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake news:show_to_all"
+        },
+        show_news_to: {
+          title: 'Показать What\'s new для пользователя(ей).',
+          description: 'Показать блок "What\'s new in izi.TRAVEL CMS" в CMS для пользователя(ей)',
+          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake news:show_to[{0}]"
+          params: [
+            {
+              default: '',
+              title: 'ID пользователя или диапазон ID пользователей в виде 1..100'
+            }
+          ]
+        },
+        hide_news: {
+          title: 'Скрыть What\'s new у всех пользователей.',
+          description: 'Убрать блок "What\'s new in izi.TRAVEL CMS" в CMS у всех пользователей',
+          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake news:hide_for_all"
+        }
+      }
+    },
+
     izi_travel: {
       title: 'izi.TRAVEL',
       commands: {
