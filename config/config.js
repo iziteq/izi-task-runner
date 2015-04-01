@@ -112,6 +112,11 @@ module.exports = {
           title: 'Обновить список городов и стран',
           description: 'Получает данные по городам и странам из API. При успешном выполнении удаляет существующие данные и заменяет их новыми. Запускается каждый час в 6 и 36 минут.',
           cmd: "cd /home/deployer/apps/izi-travel/current && IZI_CONFIG=/home/deployer/apps/izi-travel/shared/config/izi_config.yml RAILS_ENV=production bundle exec rake db:prepare"
+        },
+        clear_travel_cache: {
+          title: 'Очистить кэш на izi.TRAVEL',
+          description: 'Чистит все закешированные записи и Travel начинает общаться с API',
+          cmd: "cd /home/deployer/apps/izi-travel/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cache:clear"
         }
       }
     },
@@ -123,11 +128,6 @@ module.exports = {
           title: 'Reindex statistics',
           description: 'Забирает статисику с гугла и кладет в идекс elasticsearch. Max execution time about 5 min. Запускается в 6:00 UTC ежедневно.',
           cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake statistics:reindex"
-        },
-        clear_travel_cache: {
-          title: 'Очистить кэш на IZI.travel',
-          description: 'Чистит все закешированные записи и Travel начинает общаться с API',
-          cmd: "cd /home/deployer/apps/izi-travel/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake cache:clear"
         },
         update_reviews_average: {
           title: 'Обновить сводку отзывов и оценок для API.',
