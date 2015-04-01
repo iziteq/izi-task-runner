@@ -89,7 +89,7 @@ module.exports = {
         show_news_to: {
           title: 'Показать What\'s new для пользователя(ей).',
           description: 'Показать блок "What\'s new in izi.TRAVEL CMS" в CMS для пользователя(ей)',
-          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake news:show_to[{0}]"
+          cmd: "cd /home/deployer/apps/izi-cms/current && IZI_CONFIG=config/izi_config.yml RAILS_ENV=production bundle exec rake news:show_to[{0}]",
           params: [
             {
               default: '',
